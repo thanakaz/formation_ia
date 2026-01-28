@@ -276,6 +276,27 @@
             border: none;
         }
 
+        /* Vidéo YouTube */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 1.5rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+
         .location-info {
             background-color: var(--gris-clair);
             padding: 1.5rem;
@@ -428,6 +449,24 @@
 
     <!-- Contenu principal -->
     <main class="container">
+        <!-- Vidéo de présentation -->
+        <section id="video-presentation">
+            <h2>Découvrez APF France handicap</h2>
+            <p style="font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.8;">
+                Avant de commencer cette formation, prenez quelques instants pour découvrir notre association, 
+                nos valeurs et nos engagements au service des personnes en situation de handicap.
+            </p>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/MiKM-cLxiHs" 
+                    title="Présentation APF France handicap"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
         <!-- Objectifs -->
         <section id="objectifs">
             <h2>Objectifs de la formation</h2>
@@ -557,7 +596,7 @@
                 <h3>Contact formateur</h3>
                 <p><strong>Jérôme GARCIA</strong></p>
                 <p>Direction Régionale APF France handicap</p>
-                <p>📧 <a href="mailto:jerome.garcia@apf.asso.fr">jerome.garcia@apf.asso.fr</a></p>
+                <p>📧 <a href="/cdn-cgi/l/email-protection#f49e91869b9991da939586979d95b4958492da9587879bda9286"><span class="__cf_email__" data-cfemail="573d3225383a3279303625343e36173627317936242438793125">[email&#160;protected]</span></a></p>
             </div>
             <div class="footer-section">
                 <h3>Informations pratiques</h3>
@@ -579,7 +618,7 @@
     </footer>
 
     <!-- Script accordéon -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.addEventListener('DOMContentLoaded', function() {
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             
@@ -597,14 +636,3 @@
                     if (!isActive) {
                         accordionItem.classList.add('active');
                     }
-                });
-            });
-
-            // Ouvrir le premier item par défaut
-            if (accordionHeaders.length > 0) {
-                accordionHeaders[0].parentElement.classList.add('active');
-            }
-        });
-    </script>
-</body>
-</html>
